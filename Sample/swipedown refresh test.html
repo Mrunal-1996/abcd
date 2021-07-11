@@ -59,6 +59,34 @@
   });
 
   </script>
+  
+  
+  
+  <!-- Script -->
+<script src="//unpkg.com/hammer-touchemulator@0.0.2/touch-emulator.js"></script>
+<script>TouchEmulator()</script>
+<script src="pulltorefresh.js/dist/pulltorefresh.js" type="text/javascript"></script>
+<script type='text/javascript'>
+
+// Initialize 
+PullToRefresh.init({
+ mainElement: 'h2',
+ distThreshold: 120,
+ distMax: 140,
+ distReload: 110,
+ triggerElement: '#pulldown',
+ instructionsPullToRefresh: 'Pull down to refresh the page',
+ instructionsReleaseToRefresh: 'Release to refresh the page',
+ instructionsRefreshing: 'Refreshing the page',
+ refreshTimeout: 2000,
+ onRefresh: function(){ 
+  alert("Refresh");
+ }
+});
+</script>
+  
+  
+  
 
 </body>
 </html>
