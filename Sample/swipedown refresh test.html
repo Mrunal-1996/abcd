@@ -1,62 +1,52 @@
 
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+    margin : 0;
+    padding: 0;
+}
+
+html, body {
+    width : 100%;
+    height: 100%;
+}
+
+.pull-to-refresh-container {
+    width           : 100%;
+    height          : 100%;
+    background-color: yellow;
+    position        : relative;
+}
+
+.pull-to-refresh-content-container {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: white;
+    margin          : 0px;
+    text-align      : center;
+}
+</style>
+</head>
+<body>
+
+<div class="pull-to-refresh-container">
+    <div class="pull-to-refresh-loader-container">
+        loading ...
+    </div>
+    <div class="pull-to-refresh-content-container">
+        
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<script src="pulltorefresh.js/dist/pulltorefresh.js" type="text/javascript"></script>
 
-
-
-<script src="//unpkg.com/hammer-touchemulator@0.0.2/touch-emulator.js"></script>
-<script>TouchEmulator()</script>
-
-
-
-
-
-
-
-
- <!-- Script -->
-  <script src="//unpkg.com/hammer-touchemulator@0.0.2/touch-emulator.js"></script>
-  <script>TouchEmulator()</script>
-  <script src="pulltorefresh.js/dist/pulltorefresh.js" type="text/javascript"></script>
-  <script type='text/javascript'>
-
-  PullToRefresh.init({
-    mainElement: 'body',
-    onRefresh: function(){ window.location.reload(); }
-  });
-
-  </script>
-  
-  
-  
-  <!-- Script -->
-<script src="//unpkg.com/hammer-touchemulator@0.0.2/touch-emulator.js"></script>
-<script>TouchEmulator()</script>
-<script src="pulltorefresh.js/dist/pulltorefresh.js" type="text/javascript"></script>
-<script type='text/javascript'>
-
-// Initialize 
-PullToRefresh.init({
- mainElement: 'h2',
- distThreshold: 120,
- distMax: 140,
- distReload: 110,
- triggerElement: '#pulldown',
- instructionsPullToRefresh: 'Pull down to refresh the page',
- instructionsReleaseToRefresh: 'Release to refresh the page',
- instructionsRefreshing: 'Refreshing the page',
- refreshTimeout: 2000,
- onRefresh: function(){ 
-  alert("Refresh");
- }
-});
-</script>
-  
-  <style>
+<style>
     html,body, div, iframe{
         height: 100%;
         overflow: hidden;
@@ -64,29 +54,93 @@ PullToRefresh.init({
     }
 </style>
 
-
-
-<!doctype html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-
-</head>
-<body >
-  
-  
-  
- 
-
-
-
-
-
-
-
 <iframe height="100%" width="100%" src="https://twinsphotofilms50.pixieset.com/krimilwedspayal/" frameborder="no"></iframe>
-  
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<script>
+var mouseY      = 0;
+var startMouseY = 0;
+var container   = document.querySelector(".pull-to-refresh-content-container");
+
+container.onmousedown = (ev) => {
+    mouseY      = ev.pageY;
+    startMouseY = mouseY;
+
+    container.onmousemove = (e) => {
+      if (e.pageY > mouseY) {
+        var d = e.pageY - startMouseY;
+
+        console.log("d: " + d);
+        container.style.marginTop = d/4 + 'px';
+        if (d >= 300) {
+          // alert("load more content");
+        }
+      } else {
+        container.onmousemove = null;
+      }
+    }
+};
+
+container.onmouseup = (ev) => {
+    container.style.marginTop = '0px';
+    container.onmousemove     = null;
+};
+
+container.onmouseleave = (ev) => {
+    container.style.marginTop = '0px';
+    container.onmousemove     = null;
+};
+container.ontouchstart = (ev) => {
+    mouseY      = ev.touches[0].pageY;
+    startMouseY = mouseY;
+
+    container.ontouchmove = (e) => {
+      if (e.touches[0].pageY > mouseY) {
+        var d = e.touches[0].pageY - startMouseY;
+
+        console.log("d: " + d);
+        container.style.marginTop = d/4 + 'px';
+        if (d >= 300) {
+          // alert("load more content");
+        }
+      } else {
+        container.onmousemove = null;
+      }
+    }
+};
+
+container.ontouchcancel = (ev) => {
+    container.style.marginTop = '0px';
+    container.onmousemove     = null;
+};
+
+container.ontouchend = (ev) => {
+    container.style.marginTop = '0px';
+    container.onmousemove     = null;
+};
+
+</script>
 
 </body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
