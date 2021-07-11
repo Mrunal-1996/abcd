@@ -1,77 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>pull-to-reload Demo</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <script src="pull-to-reload.js"></script>
-
-        <style>
-            html, body {
-                margin: 0px;
-                padding: 0px;
-                background-color:#34495E;
-                color:#fff;
-                font-family:'Roboto';
-            }
-            .container { margin:0 auto; max-width:728px; font-family:14px; line-height:1.6}
-        </style>
-
-        <script>
-            var ptr;
-
-            document.addEventListener("DOMContentLoaded", function() {
-                ptr = new PullToReload({ 
-                    'callback-loading': function(){
-                        setTimeout(function(){
-                            ptr.loadingEnd();
-                        }, 5000);
-                    }
-                });
-                
-            });
-
-        </script>
-
-    </head>
-    <body>
-    
-        <div id="ptr">
-            ...
-        </div>
-
-        <div id="content" class="container">
-        <h1>pull-to-reload Demo</h1>
-        <div class="css-script-ads">
-    <script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* CSSScript Demo Page */
-google_ad_slot = "3025259193";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
-        </div>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-46156385-1', 'cssscript.com');
-  ga('send', 'pageview');
-
+    $(document).ready(function(){
+        $(".scroll").pullToRefresh({
+             refresh:200
+        })
+        .on("refresh.pulltorefresh", function (){
+            location.reload();
+        });
+    });
 </script>
-    </body>
-</html>
+
+<div class="scroll">
+    <div class="refresh">
+        Pull To Refresh 
+    </div>
+    <div class="container">
+        content
+    </div>        
+</div>
