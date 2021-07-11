@@ -1,146 +1,77 @@
-
-
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-*{
-    margin : 0;
-    padding: 0;
-}
+<html lang="en">
+    <head>
+        <title>pull-to-reload Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-html, body {
-    width : 100%;
-    height: 100%;
-}
+        <script src="pull-to-reload.js"></script>
 
-.pull-to-refresh-container {
-    width           : 100%;
-    height          : 100%;
-    background-color: yellow;
-    position        : relative;
-}
+        <style>
+            html, body {
+                margin: 0px;
+                padding: 0px;
+                background-color:#34495E;
+                color:#fff;
+                font-family:'Roboto';
+            }
+            .container { margin:0 auto; max-width:728px; font-family:14px; line-height:1.6}
+        </style>
 
-.pull-to-refresh-content-container {
-    position        : absolute;
-    top             : 0;
-    left            : 0;
-    width           : 100%;
-    height          : 100%;
-    background-color: white;
-    margin          : 0px;
-    text-align      : center;
-}
-</style>
-</head>
-<body>
+        <script>
+            var ptr;
 
-<div class="pull-to-refresh-container">
-    <div class="pull-to-refresh-loader-container">
-        loading ...
-    </div>
-    <div class="pull-to-refresh-content-container">
-        
+            document.addEventListener("DOMContentLoaded", function() {
+                ptr = new PullToReload({ 
+                    'callback-loading': function(){
+                        setTimeout(function(){
+                            ptr.loadingEnd();
+                        }, 5000);
+                    }
+                });
+                
+            });
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </script>
 
+    </head>
+    <body>
+    
+        <div id="ptr">
+            ...
+        </div>
 
-
-<style>
-    html,body, div, iframe{
-        height: 100%;
-        overflow: hidden;
-        margin: 0; padding: 0;
-    }
-</style>
-
-<iframe height="100%" width="100%" src="https://twinsphotofilms50.pixieset.com/krimilwedspayal/" frameborder="no"></iframe>
-
-
-
-
-
-
-
-    </div>
-</div>
-
+        <div id="content" class="container">
+        <h1>pull-to-reload Demo</h1>
+        <div class="css-script-ads">
+    <script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* CSSScript Demo Page */
+google_ad_slot = "3025259193";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus harum sed odit optio, fuga nam modi quod beatae? Tempore sunt molestiae, soluta quas unde exercitationem, modi accusamus pariatur reiciendis!</p>
+        </div>
 <script>
-var mouseY      = 0;
-var startMouseY = 0;
-var container   = document.querySelector(".pull-to-refresh-content-container");
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-container.onmousedown = (ev) => {
-    mouseY      = ev.pageY;
-    startMouseY = mouseY;
-
-    container.onmousemove = (e) => {
-      if (e.pageY > mouseY) {
-        var d = e.pageY - startMouseY;
-
-        console.log("d: " + d);
-        container.style.marginTop = d/4 + 'px';
-        if (d >= 300) {
-          // alert("load more content");
-        }
-      } else {
-        container.onmousemove = null;
-      }
-    }
-};
-
-container.onmouseup = (ev) => {
-    container.style.marginTop = '0px';
-    container.onmousemove     = null;
-};
-
-container.onmouseleave = (ev) => {
-    container.style.marginTop = '0px';
-    container.onmousemove     = null;
-};
-container.ontouchstart = (ev) => {
-    mouseY      = ev.touches[0].pageY;
-    startMouseY = mouseY;
-
-    container.ontouchmove = (e) => {
-      if (e.touches[0].pageY > mouseY) {
-        var d = e.touches[0].pageY - startMouseY;
-
-        console.log("d: " + d);
-        container.style.marginTop = d/4 + 'px';
-        if (d >= 300) {
-          // alert("load more content");
-        }
-      } else {
-        container.onmousemove = null;
-      }
-    }
-};
-
-container.ontouchcancel = (ev) => {
-    container.style.marginTop = '0px';
-    container.onmousemove     = null;
-};
-
-container.ontouchend = (ev) => {
-    container.style.marginTop = '0px';
-    container.onmousemove     = null;
-};
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
 
 </script>
-
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </body>
+</html>
