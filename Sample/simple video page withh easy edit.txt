@@ -4,6 +4,39 @@
 
 <body style="background-color:grey;">
 
+<script>  
+
+document.addEventListener("keyup", function (e) {
+    var keyCode = e.keyCode ? e.keyCode : e.which;
+            if (keyCode == 44) {
+                stopPrntScr();
+            }
+        });
+function stopPrntScr() {
+
+            var inpFld = document.createElement("input");
+            inpFld.setAttribute("value", ".");
+            inpFld.setAttribute("width", "0");
+            inpFld.style.height = "0px";
+            inpFld.style.width = "0px";
+            inpFld.style.border = "0px";
+            document.body.appendChild(inpFld);
+            inpFld.select();
+            document.execCommand("copy");
+            inpFld.remove(inpFld);
+        }
+       function AccessClipboardData() {
+            try {
+                window.clipboardData.setData('text', "Access   Restricted");
+            } catch (err) {
+            }
+        }
+        setInterval("AccessClipboardData()", 300); 
+
+</script>
+
+
+
 
   <script>
         window.oncontextmenu = function () {
@@ -31,49 +64,49 @@
   
   <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/f52b478598d2fa4ad9c72db81588e948aa8ecbec.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="2160">
 
         <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/f52b478598d2fa4ad9c72db81588e948aa8ecbec.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="1440">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/68c4260e9f6c3a8f2d3d9ed2f4566fd198d8a0bd.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/f52b478598d2fa4ad9c72db81588e948aa8ecbec.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="1080">
 
             <source src="
 
-https://embed-ssl.wistia.com/deliveries/d9b3d1f8d7a9cec6b198edabf8c7a01e673352b3.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/1adc593767cf287bb69e918a913093d9daba7fbf.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="720">
 
       <source src="
 
-https://embed-ssl.wistia.com/deliveries/46e3e41dc4eb2d4068c520fa719c4b5c2bf85599.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/c6c7c769ea335d057833b0d9f615c49030923aeb.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="540">
 
         <source src="
 
-https://embed-ssl.wistia.com/deliveries/3076e706bed63210c294f84d3a781122557a3e11.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/d66a1813d67b06d3a1fd0d8d3b7f8cb11dc256b4.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="360">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/302843ce6581eb97d944f8893343c34ae79b4828.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/6e08fe77e3c03a8bf3008248b67827282afffc7e.bin?disposition=attachment&filename=Samir+weds+nazema.mp4
 
 "  type="video/mp4" size="240">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/bc21f9ca730c593fb5b03af7fd0d3ec7.bin?disposition=attachment&filename=Samir+weds+nazema
 
 "  type="video/mp4" size="auto">
           
@@ -174,49 +207,49 @@ https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?dis
   
   <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/651542405a90a9d9c6fb4999ad46a0b89674832c.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="2160">
 
         <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/651542405a90a9d9c6fb4999ad46a0b89674832c.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="1440">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/68c4260e9f6c3a8f2d3d9ed2f4566fd198d8a0bd.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/651542405a90a9d9c6fb4999ad46a0b89674832c.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="1080">
 
             <source src="
 
-https://embed-ssl.wistia.com/deliveries/d9b3d1f8d7a9cec6b198edabf8c7a01e673352b3.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/90a4fa0c1a598d312db45445467f10631267e9d8.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="720">
 
       <source src="
 
-https://embed-ssl.wistia.com/deliveries/46e3e41dc4eb2d4068c520fa719c4b5c2bf85599.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/7b790619998a47561958cec7e6cf006eabe3bc8e.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="540">
 
         <source src="
 
-https://embed-ssl.wistia.com/deliveries/3076e706bed63210c294f84d3a781122557a3e11.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/fffa7c19acdb04bd8b28463eb57f073875c31528.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="360">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/302843ce6581eb97d944f8893343c34ae79b4828.bin?disposition=attachment&filename=02.mp4
+https://embed-ssl.wistia.com/deliveries/47877f5400ef9dd76e85b66c052b06217c5c60c1.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="240">
 
           <source src="
 
-https://embed-ssl.wistia.com/deliveries/8951d94aef869a0276f556dcf6179f90.bin?disposition=attachment&filename=02
+https://embed-ssl.wistia.com/deliveries/651542405a90a9d9c6fb4999ad46a0b89674832c.bin?disposition=attachment&filename=Samir+weds+nazema+couple+song.mp4
 
 "  type="video/mp4" size="auto">
           
